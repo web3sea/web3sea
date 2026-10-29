@@ -113,6 +113,8 @@ The following actions require explicit in-session confirmation before executing,
 - Sending any email, message, or external API call
 - Executing any command with irreversible external side effects
 
+**Exception: setting secrets.** Setting a secret or environment variable at repository, project, service or environment level (GitHub Actions, Railway, Vercel, Cloudflare Workers, Fly.io, Azure Key Vault) does not need confirmation when the value is piped from 1Password (`op read`) on stdin and never printed, written to a file or passed as an argument. Deleting a value, org-wide or shared variables, getting a value that isn’t in 1Password yet, and letting the change redeploy production still need my yes.
+
 “You mentioned this earlier” is not confirmation. I must say yes in the current message.
 
 -----
